@@ -117,8 +117,7 @@ function renderCart() {
     }
 
     function deleteElement() {
-       this.parentElement.remove();
-       document.getElementById('cart_totals').style.display = 'none';
+       this.parentElement.remove(); 
        inCart --;
        document.getElementById('shopCartItems').innerHTML =
        `<span class="shop-cart__badge"> ${inCart} </span>`
