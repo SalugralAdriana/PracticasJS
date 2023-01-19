@@ -312,6 +312,7 @@ mark {
 
 /* producto */
 .product {
+    position: relative;
     display: grid;
     grid-template-areas: "image title title" "image price price" "image units total" ;
     grid-template-columns: 100px 1fr 1fr;
@@ -344,6 +345,16 @@ mark {
 }
   .product-units { grid-area: units;}
   .product-total { grid-area: total;}
+
+  .delete {
+    border: 0;
+    background: no-repeat;
+    font-size: 0.6rem;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    color: var(--primaryColor);
+  }
 
   .coupon, .totals, .btn-checkout {display: none;}
   .coupon {
