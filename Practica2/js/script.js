@@ -5,7 +5,7 @@ function timer() {
     var end = new Date(2023, 0, 20, 15); //20-01-2023 a las 15:00 
 
     var diffInTime = end.getTime() - today.getTime();
-    var diffInDays = Math.ceil(diffInTime / (1000 * 3600 * 24));
+    var diffInDays = (Math.ceil(diffInTime / (1000 * 3600 * 24))) - 1;
     var diffInHours = Math.floor((diffInTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var diffInMinutes = Math.floor((diffInTime % (1000 * 60 * 60)) / (1000 * 60));
     var diffInSeconds = Math.floor((diffInTime % (1000 * 60)) / 1000);
@@ -134,16 +134,19 @@ function coupon() {
 
     code = document.getElementById('coupon-input').value;
 
-    switch (code.toUpperCase()) {
-        case 'BIENVENIDO':
-            console.log(code);
-            couponApply = 1;
-            cartTotals();
-            break;
-
-        default:
-            console.log('el código no es válido');
-            break;
+    if (code != ''){
+        switch (code.toUpperCase()) {
+            case 'BIENVENIDO':
+                console.log(code);
+                couponApply = 1;
+                cartTotals();
+                break;
+                
+    
+            default:
+                document.getElementById('coupon-error').innerText='El código introducido no es válido';
+                break;
+        }
     }
 }
 

@@ -368,6 +368,11 @@ mark {
     display: inline-block;
     margin-right: calc(var(--padding) / 2);
 }
+.form-text--error {
+    font-weight: bold;
+    display: block;
+    color: #a62121;
+}
 .totals {
     text-transform: uppercase;
     margin-bottom: var(--padding);
